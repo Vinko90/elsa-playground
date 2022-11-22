@@ -22,8 +22,8 @@ var builder = WebApplication.CreateBuilder(args);
         .AddQuartzTemporalActivities()
         .AddJavaScriptActivities()
         .AddUserTaskActivities()
-        .AddActivitiesFrom<Startup>()
-        .AddFeatures(new[] { typeof(Startup) }, builder.Configuration)
+        .AddActivitiesFrom<Program>()
+        .AddFeatures(new[] { typeof(Program) }, builder.Configuration)
         .WithContainerName(elsaSection.GetSection("Server:ContainerName").Get<string>())
     );
     

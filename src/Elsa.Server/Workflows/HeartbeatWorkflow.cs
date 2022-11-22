@@ -14,8 +14,8 @@ public class HeartbeatWorkflow : IWorkflow
     public void Build(IWorkflowBuilder builder)
     {
         builder
-            .WithDisplayName("Timer")
-            .Timer(Duration.FromSeconds(30))
+            .WithDisplayName("Custom Timer")
+            .Timer(Duration.FromSeconds(10))
             .WriteLine(() => $"Heartbeat at {_clock.GetCurrentInstant()}");
     }
 }
